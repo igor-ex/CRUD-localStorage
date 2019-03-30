@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD & localStorage</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+<h1>CRUD & localStorage</h1>
+<div class="inputs">
+    <label>ID<input type="text" id="Id" value=""></label>
+    <label>First Name<input type="text" id="fName" value=""> </label>
+    <label>Last Name<input type="text" id="lName" value=""></label>
+    <label>Age<input type="text" id="age" value=""></label>
+</div>
+<div class="buttons">
+    <input type="button" id = "readLs" value="Read">
+    <input type="button" id = "addStart" value="addStart">
+    <input type="button" id = "addMiddle" value="addMiddle">
+    <input type="button" id = "addEnd" value="addEnd">
+</div>
+<div class="buttons">
+    <input type="button" id = "saveLs" value="Save">
+    <input type="button" id = "clearLSTab" value="Clear">
+    <input type="button" id = "delElement" value="Delete">
+    <input type="button" id = "updateData" value="Update">
+</div>
+    <table id="myTable">
+        <tbody>
+            <tr>
+                <td>ID</td><td>First Name</td><td>Last Name</td><td>Age</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="src/main.js"></script>
+<script src="src/stripe.js"></script>
+<script src="src/init.js"></script>
+<script>createStripe(document.body);</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+<h1>CRUD</h1>
+<div class="inputs">
+    <label>ID<input type="text" id="Id" value=""></label>
+    <label>First Name<input type="text" id="fName" value=""> </label>
+    <label>Last Name<input type="text" id="lName" value=""></label>
+    <label>Age<input type="text" id="age" value=""></label>
+</div>
+<div class="buttons">
+    <input type="button" id = "addEnd" value="Create">
+    <input type="button" id = "delElement" value="Delete">
+    <input type="button" id = "updateData" value="Update">
+</div>
+
+    <table id="myTable">
+        <tbody>
+            <tr>
+                <td>ID</td><td>First Name</td><td>Last Name</td><td>Age</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="src/main.js"></script>
+<script src="src/stripe.js"></script>
+<script src="src/init.js"></script>
+<script>createStripe(document.body);</script>
+</body>
+</html>
