@@ -7,9 +7,9 @@
 @input-horizontal-margin: 10px;
 @base-color: #aee8ff;
 
+/* reset */
+
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -20,64 +20,54 @@ body {
     padding: 0;
 }
 
+/* general */
+
 .wrapper {
     padding: 15px;
     max-width: 1000px;
     margin: auto;
 }
 
-input {
-    font-size: @font-size;
-    padding: @input-vertical-padding 7px;
-    border: @border;
-    margin-bottom: 7px;
-    
-    &:focus, &:focus {
-        outline: none;
-    }
-    
-    &[type=button] {
-        background: #aee8ff;
-        padding: @input-vertical-padding 15px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-    }
-    
-    &[type=button]:hover {
-        background: darken(@base-color, 5%);
-    }
-
-    &[type=text]:focus {
-        background: lighten(@base-color, 14%);
-    }
-}
-
-h1 {
+.wrapper__title {
     margin-top: 0;
     line-height: 1.1;
 }
 
+.inputs__input, .buttons__button {
+    font-size: @font-size;
+    padding: @input-vertical-padding 7px;
+    border: @border;
+    margin-bottom: 7px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 .inputs {
     display: flex;
-    
-    & label {
+
+    &__row{
         margin-right: @input-horizontal-margin;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
-    & label:last-child {
-        margin-right: 0;
-    }
-    
-    & input {
+    &__input {
         display: block;
         width: 100%;
+
+        &:focus {
+            background: lighten(@base-color, 14%);
+        }
     }
     
     @media (max-width: 550px) {
         flex-direction: column;
         
-        & label {
+        &__row {
             margin-right: 0;
         }
     }
@@ -88,8 +78,15 @@ h1 {
     flex-wrap: wrap;
     margin: 10px 0;
 
-    & input {
+    &__button {
         margin-right: @input-horizontal-margin;
+        background: #aee8ff;
+        padding: @input-vertical-padding 15px;
+        border-radius: 3px;
+
+        &:hover {
+            background: darken(@base-color, 5%);
+        }
     }
 
     @media (max-width: 550px) {
@@ -97,7 +94,7 @@ h1 {
     }
 }
 
-#myTable {
+.table {
     width: 100%;
     
     & td {
